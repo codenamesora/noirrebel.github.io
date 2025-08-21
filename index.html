@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Noir Rebel — Retro 90s E‑Commerce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:wght@600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header id="topbar" class="topbar">
+  <div class="brand"><span class="serif">Noir</span> <span class="rebel">Rebel</span></div>
+  <nav class="nav">
+    <a href="#home">Home</a>
+    <a href="#collections">Collections</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="actions">
+    <button id="audioToggle" class="walkman">►</button>
+    <button id="cartBtn" class="cart">🛒 <span id="cartCount">0</span></button>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <video class="hero-video" src="assets/vhs.mp4" autoplay muted loop playsinline></video>
+  <img class="hero-fallback" src="assets/hero-placeholder.png" alt="Noir Rebel"/>
+  <div class="vhs-noise"></div>
+  <div class="hero-center">
+    <h1 class="glitch" data-text="NOIR REBEL">NOIR REBEL</h1>
+    <p class="tag">Classy Streetwear • Retro 90s Rock</p>
+    <a href="#collections" class="cta">Shop Now</a>
+  </div>
+</section>
+
+<main>
+  <section id="collections" class="section">
+    <h2 class="title">Featured Collections</h2>
+    <div class="grid">
+      <div class="card" data-name="Leather Jacket" data-price="129.00">
+        <div class="crt smoke">
+          <img src="assets/prod-1.png" alt="Leather Jacket"/>
+          <div class="scanlines"></div>
+        </div>
+        <div class="meta">
+          <h3>Leather Jacket</h3>
+          <p>Blood-red stitch details.</p>
+          <div class="buy"><span class="price">¥12900</span><button class="add">Add to Cart</button></div>
+        </div>
+      </div>
+      <div class="card" data-name="Graphic Tee" data-price="39.00">
+        <div class="crt smoke">
+          <img src="assets/prod-2.png" alt="Graphic Tee"/>
+          <div class="scanlines"></div>
+        </div>
+        <div class="meta">
+          <h3>Graphic Tee</h3>
+          <p>Neon cyan glitch print.</p>
+          <div class="buy"><span class="price">¥3900</span><button class="add">Add to Cart</button></div>
+        </div>
+      </div>
+      <div class="card" data-name="Chain Boots" data-price="159.00">
+        <div class="crt smoke">
+          <img src="assets/prod-3.png" alt="Chain Boots"/>
+          <div class="scanlines"></div>
+        </div>
+        <div class="meta">
+          <h3>Chain Boots</h3>
+          <p>Steel chain accents.</p>
+          <div class="buy"><span class="price">¥15900</span><button class="add">Add to Cart</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="title">About Noir Rebel</h2>
+    <p class="lede">High-end streetwear forged in chrome & velvet. Classy silhouettes, rock soul, and a whisper of 90s rebellion.</p>
+  </section>
+
+  <section id="contact" class="section">
+    <h2 class="title">Contact</h2>
+    <p>Email: hello@noirrebel.example</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="social">
+    <a href="#" aria-label="Instagram">IG</a>
+    <a href="#" aria-label="TikTok">TT</a>
+    <a href="#" aria-label="X">X</a>
+  </div>
+  <div class="player">
+    <audio id="bgAudio" src="assets/ambient.mp3" loop></audio>
+    <span class="note">Backsound: replace with “Digital Ghosts” (Kevin MacLeod) or any CC track.</span>
+  </div>
+  <p>© Noir Rebel</p>
+</footer>
+
+<!-- Cart Modal -->
+<div id="cartModal" class="modal" aria-hidden="true">
+  <div class="modal-inner">
+    <button class="close" id="closeCart">✕</button>
+    <h3>Your Cart</h3>
+    <div id="cartList"></div>
+    <div class="cart-actions">
+      <strong>Total: ¥<span id="cartTotal">0.00</span></strong>
+      <button id="checkoutBtn" class="checkout">Checkout</button>
+    </div>
+  </div>
+</div>
+
+<!-- Checkout Modal -->
+<div id="checkoutModal" class="modal" aria-hidden="true">
+  <div class="modal-inner">
+    <button class="close" id="closeCheckout">✕</button>
+    <h3>Checkout</h3>
+    <form id="checkoutForm" class="checkout-form">
+      <label>Name <input name="name" required></label>
+      <label>Email <input type="email" name="email" required></label>
+      <label>Address <textarea name="address" required></textarea></label>
+      <button type="submit" class="pay">Place Order</button>
+    </form>
+    <div id="orderSuccess" class="success">Thanks! Your order is placed.</div>
+  </div>
+</div>
+
+<div id="toast" class="toast">ADDED TO CART</div>
+
+<script src="script.js"></script>
+</body>
+</html>
